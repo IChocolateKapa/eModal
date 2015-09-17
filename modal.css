@@ -1,0 +1,52 @@
+.hp-modal{
+    position: relative;
+    background: #f8f8f8;
+    text-align: center;
+    width: 300px;
+    min-height: 120px;
+    height: auto;
+    font-family: 'Microsoft Yahei';
+}
+.hp-modal .title{
+    position: relative;
+    width: 100%;
+    /*padding:  10px 40px 10px 10px;*/
+    line-height: 40px;
+    min-height: 40px;
+    height: auto;
+    background: #eee;
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+.hp-modal .closeX{
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 20px;
+    line-height: 20px;
+    font-style: normal;
+    color: #fff;
+    background: grey;
+    text-align: center;
+    z-index: 20;
+    cursor: pointer;
+}
+.hp-modal span{
+    /*position: absolute;*/
+    display: inline-block;
+    line-height: 26px;
+    width: auto;
+    min-width: 100px;
+    padding: 5px 8px;
+    white-space: pre-line;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: red;
+}
+.hp-modal span:nth-of-type(1){
+    /*margin-top: 30px;*/
+    max-width: 240px;
+
+}

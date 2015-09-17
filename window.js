@@ -10,18 +10,20 @@ define(['jquery'], function($){
         alert: function(title, msg, cfg){
 
             this.cfg = {
-                width: "400",
-                "height": "110",
+                width: "300",
+                "height": "auto",
                 "x": "50%",
                 "y": "20%"
             };
             $.extend(this.cfg, cfg);
 
+            console.log(this.cfg)
+
             var title2 = "" || title;
-            var ss = "<div class=\"modal\">"
-            + "<span>"+ title2 + "</span>"
-            + "<span>"+ msg + "</span>"
-            + "</div>";
+            var ss = "<div class=\"hp-modal\">"
+                    + "<p class='title'>"+ title2 + "</p>"
+                    + "<span>"+ msg + "</span>"
+                    + "</div>";
 
             $(ss).appendTo($("body"));
 
@@ -35,18 +37,21 @@ define(['jquery'], function($){
             } else {
                 var y = this.cfg.y + "px"
             }
-            console.log(x, y)
-            $(".modal").css({
+            console.log(this.cfg.width)
+            console.log(this.cfg.height)
+            $(".hp-modal").css({
+                "position": "absolute",
                 "width": this.cfg.width + "px",
                 "height": this.cfg.height + "px",
-                "left": x,
+                "left": "50%",
                 "margin-left": "-" + this.cfg.width/2 + "px",
-                "top": y
+                "top": "50%",
+                "margin-top": "-" + this.cfg.height/2 + "px"
             })
 
-            var clx = $("<i class=\"closeX\" title=\"关闭此窗口\">X</i>").prependTo($(".modal")).click(function(){
-                $(".modal").hide();
-                $(".modal").remove();
+            var clx = $("<i class=\"closeX\" title=\"关闭此窗口\">X</i>").prependTo($(".hp-modal")).click(function(){
+                $(".hp-modal").hide();
+                $(".hp-modal").remove();
             })
         },
         confirm: function(msg){
