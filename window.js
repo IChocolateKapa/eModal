@@ -23,6 +23,7 @@ define(['jquery'], function($){
             var ss = "<div class=\"hp-modal\">"
                     + "<p class='title'>"+ title2 + "</p>"
                     + "<span>"+ msg + "</span>"
+                    + "<input type='button' value='确定' id=''/>"
                     + "</div>";
 
             $(ss).appendTo($("body"));
@@ -37,16 +38,16 @@ define(['jquery'], function($){
             } else {
                 var y = this.cfg.y + "px"
             }
+            var eleH = $(".hp-modal").height();
+
             console.log(this.cfg.width)
             console.log(this.cfg.height)
             $(".hp-modal").css({
                 "position": "absolute",
-                "width": this.cfg.width + "px",
-                "height": this.cfg.height + "px",
                 "left": "50%",
-                "margin-left": "-" + this.cfg.width/2 + "px",
+                "margin-left": "-150px",
                 "top": "50%",
-                "margin-top": "-" + this.cfg.height/2 + "px"
+                "margin-top": "-" + eleH/2 + "px"
             })
 
             var clx = $("<i class=\"closeX\" title=\"关闭此窗口\">X</i>").prependTo($(".hp-modal")).click(function(){

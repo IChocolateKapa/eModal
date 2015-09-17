@@ -43,7 +43,7 @@
     white-space: pre-line;
     word-break: break-all;
     word-wrap: break-word;
-    color: red;
+    color: #000;
 }
 .hp-modal span:nth-of-type(1){
     /*margin-top: 30px;*/
