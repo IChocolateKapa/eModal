@@ -3,10 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="modal.css"/>
-    <script src="require.js" data-main="main"></script>
+    <link rel="stylesheet" href="eModal/css/modal.css"/>
+    <script src="jquery-2.1.3.min.js"></script>
+    <script src="eModal/eModal.js"></script>
+    <!--<script src="require.js" data-main="eModal-Re/main"></script>-->
+    <script>
+        function test(){
+            eModal.confirm("确定要点击我吗？", function(){
+            }, function(){}, {shade: false});
+        }
+        function test1(){
+            eModal.confirm("确定要点击我吗？", function(){
+            }, function(){}, {shade: true});
+        }
+        function test2(){
+            eModal.alert("3333333",{shade: false});
+        }
+
+
+    </script>
 </head>
 <body>
+
+<input type="button" value="点击" onclick="test()"/>
+<input type="button" value="点击222" onclick="test1()"/>
+<input type="button" value="点击333" onclick="test2()"/>
 
 </body>
 </html>
