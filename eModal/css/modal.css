@@ -3,7 +3,7 @@ body{
     padding: 0;
 }
 .hp-modal-mask{
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,.2);
@@ -11,10 +11,11 @@ body{
 }
 
 .hp-modal{
-    position: relative;
+    position: absolute;
     background: #f8f8f8;
     text-align: center;
     width: 300px;
+    left: 50%;
     min-height: 120px;
     height: auto;
     font-family: 'Microsoft Yahei';

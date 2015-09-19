@@ -9,6 +9,7 @@ var eModal = {
     alert: function(msg, cfg, fn){
 
         this.cfg = {
+            width: 300,
             title: "信息",
             skin: "0",
             shade: true
@@ -29,27 +30,26 @@ var eModal = {
                 + "</div>"
                 + "</div>";
 
-
+        var docH = $(document).height();
         if(ifShade){
             var shade = "<div class='hp-modal-mask'></div>";
-            $("body").append(shade);
-            var docH = $(document).height();
-            $(".hp-modal-mask").css({"height": docH});
+            $("body").prepend(shade);
             $(ss).appendTo($(".hp-modal-mask"));
+            $(".hp-modal-mask").css({"height": docH});
         } else {
-            $(ss).appendTo($("body"));
+            $(ss).prependTo($("body"));
         }
 
 
         var eleH = $(".hp-modal").height();
 
         $(".hp-modal").css({
-            "position": "absolute",
-            "left": "50%",
-            "margin-left": "-150px",
+            width: this.cfg.width,
+            "margin-left": "-" + this.cfg.width/2 + "px",
             "top": "50%",
             "margin-top": "-" + eleH/2 + "px"
         });
+
 
         var oDiv=document.getElementById('hp-title');
 
@@ -135,6 +135,7 @@ var eModal = {
     },
     confirm: function(msg, fn, fn2, cfg){
         this.cfg = {
+            width: 300,
             skin: "0",
             shade: false
         };
@@ -154,24 +155,23 @@ var eModal = {
             + "</div>"
             + "</div>";
 
-
+        var docH = $(document).height();
         if(ifShade){
             var shade = "<div class='hp-modal-mask'></div>";
-            $("body").append(shade);
-            var docH = $(document).height();
-            $(".hp-modal-mask").css({"height": docH});
+            $("body").prepend(shade);
             $(ss).appendTo($(".hp-modal-mask"));
+            $(".hp-modal-mask").css({"height": docH});
         } else {
-            $(ss).appendTo($("body"));
+            $(ss).prependTo($("body"));
         }
 
 
         var eleH = $(".hp-modal").height();
 
+
         $(".hp-modal").css({
-            "position": "absolute",
-            "left": "50%",
-            "margin-left": "-150px",
+            width: this.cfg.width,
+            "margin-left": "-" + this.cfg.width/2 + "px",
             "top": "50%",
             "margin-top": "-" + eleH/2 + "px"
         });
