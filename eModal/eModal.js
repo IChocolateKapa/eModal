@@ -42,11 +42,12 @@ var eModal = {
 
 
         var eleH = $(".hp-modal").height();
-
+        var winH = $(window).height();
+        var topH = winH * 0.5 + "px";
         $(".hp-modal").css({
             width: this.cfg.width,
             "margin-left": "-" + this.cfg.width/2 + "px",
-            "top": "50%",
+            "top": topH,
             "margin-top": "-" + eleH/2 + "px"
         });
 
@@ -62,8 +63,6 @@ var eModal = {
                 var posY = ev.pageY;
                 var titleH = $("#hp-title").height();
                 $(".hp-modal").css({"top": posY+titleH+25 + "px", "left": posX+"px"});
-
-                var winW = $(window).width();
             };
 
             document.onmouseup=function ()
@@ -168,11 +167,12 @@ var eModal = {
 
         var eleH = $(".hp-modal").height();
 
-
+        var winH = $(window).height();
+        var topH = winH * 0.5 + "px";
         $(".hp-modal").css({
             width: this.cfg.width,
             "margin-left": "-" + this.cfg.width/2 + "px",
-            "top": "50%",
+            "top": topH,
             "margin-top": "-" + eleH/2 + "px"
         });
 
@@ -187,8 +187,6 @@ var eModal = {
                 var posY = ev.pageY;
                 var titleH = $("#hp-title").height();
                 $(".hp-modal").css({"top": posY+titleH+25 + "px", "left": posX+"px"});
-
-                var winW = $(window).width();
             };
 
             document.onmouseup=function ()

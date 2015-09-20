@@ -10,6 +10,7 @@ define(['jquery'], function($){
         alert: function(msg, cfg, fn){
 
             this.cfg = {
+                width: 300,
                 title: "信息",
                 skin: "0",
                 shade: true
@@ -20,37 +21,37 @@ define(['jquery'], function($){
 
             var ifShade = this.cfg.shade;
 
-            var title2 = "信息" || title;
+            var title2 = "信息";
             var ss = "<div class=\"hp-modal\">"
-                    + "<p id='hp-title'>"+ title2 + "</p>"
-                    + "<span>"+ msg + "</span>"
-                    + "<div class='btn-group'>"
-                    + "<a href='javascript:void(0)' id='hp-modal-btn-sure'>确定</a>"
+                + "<p id='hp-title'>"+ title2 + "</p>"
+                + "<span>"+ msg + "</span>"
+                + "<div class='btn-group'>"
+                + "<a href='javascript:void(0)' id='hp-modal-btn-sure'>确定</a>"
                     //+ "<a href='javascript:void(0)' id='hp-modal-btn-no'>取消</a>"
-                    + "</div>"
-                    + "</div>";
+                + "</div>"
+                + "</div>";
 
-
+            var docH = $(document).height();
             if(ifShade){
                 var shade = "<div class='hp-modal-mask'></div>";
-                $("body").append(shade);
-                var docH = $(document).height();
-                $(".hp-modal-mask").css({"height": docH});
+                $("body").prepend(shade);
                 $(ss).appendTo($(".hp-modal-mask"));
+                $(".hp-modal-mask").css({"height": docH});
             } else {
-                $(ss).appendTo($("body"));
+                $(ss).prependTo($("body"));
             }
 
 
             var eleH = $(".hp-modal").height();
-
+            var winH = $(window).height();
+            var topH = winH * 0.5 + "px";
             $(".hp-modal").css({
-                "position": "absolute",
-                "left": "50%",
-                "margin-left": "-150px",
-                "top": "50%",
+                width: this.cfg.width,
+                "margin-left": "-" + this.cfg.width/2 + "px",
+                "top": topH,
                 "margin-top": "-" + eleH/2 + "px"
             });
+
 
             var oDiv=document.getElementById('hp-title');
 
@@ -63,8 +64,6 @@ define(['jquery'], function($){
                     var posY = ev.pageY;
                     var titleH = $("#hp-title").height();
                     $(".hp-modal").css({"top": posY+titleH+25 + "px", "left": posX+"px"});
-
-                    var winW = $(window).width();
                 };
 
                 document.onmouseup=function ()
@@ -136,6 +135,7 @@ define(['jquery'], function($){
         },
         confirm: function(msg, fn, fn2, cfg){
             this.cfg = {
+                width: 300,
                 skin: "0",
                 shade: false
             };
@@ -145,7 +145,7 @@ define(['jquery'], function($){
 
             var ifShade = this.cfg.shade;
 
-            var title2 = "确认框" || title;
+            var title2 = "确认框";
             var ss = "<div class=\"hp-modal\">"
                 + "<p id='hp-title'>"+ title2 + "</p>"
                 + "<span>"+ msg + "</span>"
@@ -155,25 +155,25 @@ define(['jquery'], function($){
                 + "</div>"
                 + "</div>";
 
-
+            var docH = $(document).height();
             if(ifShade){
                 var shade = "<div class='hp-modal-mask'></div>";
-                $("body").append(shade);
-                var docH = $(document).height();
-                $(".hp-modal-mask").css({"height": docH});
+                $("body").prepend(shade);
                 $(ss).appendTo($(".hp-modal-mask"));
+                $(".hp-modal-mask").css({"height": docH});
             } else {
-                $(ss).appendTo($("body"));
+                $(ss).prependTo($("body"));
             }
 
 
             var eleH = $(".hp-modal").height();
 
+            var winH = $(window).height();
+            var topH = winH * 0.5 + "px";
             $(".hp-modal").css({
-                "position": "absolute",
-                "left": "50%",
-                "margin-left": "-150px",
-                "top": "50%",
+                width: this.cfg.width,
+                "margin-left": "-" + this.cfg.width/2 + "px",
+                "top": topH,
                 "margin-top": "-" + eleH/2 + "px"
             });
 
@@ -188,8 +188,6 @@ define(['jquery'], function($){
                     var posY = ev.pageY;
                     var titleH = $("#hp-title").height();
                     $(".hp-modal").css({"top": posY+titleH+25 + "px", "left": posX+"px"});
-
-                    var winW = $(window).width();
                 };
 
                 document.onmouseup=function ()

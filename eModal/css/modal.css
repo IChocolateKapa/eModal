@@ -11,7 +11,7 @@ body{
 }
 
 .hp-modal{
-    position: absolute;
+    position: fixed;
     background: #f8f8f8;
     text-align: center;
     width: 300px;
@@ -48,7 +48,6 @@ body{
     cursor: pointer;
 }
 .hp-modal span{
-    /*position: absolute;*/
     display: inline-block;
     margin-top: 20px;
     line-height: 26px;
@@ -61,7 +60,6 @@ body{
     color: #000;
 }
 .hp-modal span:nth-of-type(1){
-    /*margin-top: 30px;*/
     max-width: 240px;
 }
 .btn-group{
