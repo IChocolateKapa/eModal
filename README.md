@@ -4,8 +4,8 @@
 #使用方法
 >> 在页面中引入css和js：
 
-#### <link rel="stylesheet" href="js/lib/eModal/css/modal.css"/>
-#### <script src="js/lib/eModal/eModal.js"></script>
+    ##  <link rel="stylesheet" href="js/lib/eModal/css/modal.css"/>
+    ##  <script src="js/lib/eModal/eModal.js"></script>
     
     
 >> 使用方法与alert等一样：
