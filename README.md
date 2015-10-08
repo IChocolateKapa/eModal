@@ -12,5 +12,12 @@
 
     ##  eModal.alert("kkk")
     ##   eModal.confirm("kkk")
+    ##  eModal.confirm("确定要点击我吗？", function(){
+            }, function(){}, {shade: true});
+            
+    eModal.confirm("确定要点击我吗？", function(){
+            }, function(){}, {shade: false});
+            
+    eModal.alert("3333333",{shade: false});
     
     
