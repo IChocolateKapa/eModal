@@ -9,5 +9,8 @@
     
     
 >> 使用方法与alert等一样：
- eModal.alert("kkk")
- eModal.confirm("kkk")
+
+    ##  eModal.alert("kkk")
+    ##   eModal.confirm("kkk")
+    
+    
