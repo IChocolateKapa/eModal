@@ -5,48 +5,71 @@ body{
 .hp-modal-mask{
     position: absolute;
     width: 100%;
-    background: rgba(0,0,0,.2);
+    background: rgba(53, 118, 173, 0.5);
     z-index: 1000;
 }
 
 .hp-modal{
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    -moz-box-shadow: 1px 1px 20px #175591;
+    -webkit-box-shadow: 1px 1px 20px #175591;
+    -ms-box-shadow: 1px 1px 20px #175591;
+    -o-box-shadow: 1px 1px 20px #175591;
+    box-shadow: 1px 1px 20px #175591;
     position: fixed;
     background: #f8f8f8;
     text-align: center;
-    width: 300px;
+    min-width: 300px;
+    /*max-width: 900px;*/
+    width: auto;
     left: 50%;
+    transform: translateX(-50%);
     min-height: 120px;
     height: auto;
     font-family: 'Microsoft Yahei';
 }
 .hp-modal #hp-title{
     position: relative;
-    width: 100%;
+    width: calc(100% - 40px);
     /*padding:  10px 40px 10px 10px;*/
     line-height: 40px;
     min-height: 40px;
     height: auto;
-    background: #eee;
+    background: #3284a7;
     box-sizing: inherit;
     padding: 0;
     margin: 0;
     cursor: move;
+    color: #ffffff;
+    text-align: left;
+    text-indent: 10px;
+    padding-right:40px;
 }
+
+.hp-modal .hp-modal-body{
+    text-align: left;
+    padding: 20px;
+    /*min-height: 60px;*/
+}
+
 .hp-modal .closeX{
     display: inline-block;
     position: absolute;
-    right: 10px;
-    top: 10px;
-    width: 20px;
-    line-height: 20px;
+    right: 0;
+    top: 0;
+    width: 40px;
+    line-height: 40px;
     font-style: normal;
     color: #fff;
-    background: grey;
     text-align: center;
     z-index: 2000;
     cursor: pointer;
 }
-.hp-modal span{
+.hp-modal>span{
     display: inline-block;
     margin-top: 20px;
     line-height: 26px;
@@ -58,40 +81,45 @@ body{
     word-wrap: break-word;
     color: #000;
 }
-.hp-modal span:nth-of-type(1){
+.hp-modal>span:nth-of-type(1){
     max-width: 240px;
 }
 .btn-group{
     position: relative;
-    margin-top: 30px;
+    margin-top: 10px;
     bottom: 10px;
     width: 90%;
     text-align: right;
-    /*background: red;*/
 }
 .btn-group a{
     display: inline-block;
-    line-height: 30px;
-    width: 70px;
+    line-height: 28px;
+    width: 80px;
     border: none;
-    text-decoration: none;
+
     text-align: center;
     font-size: 14px;
-    margin-right: 20px;
+    margin-right: 30px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.btn-group a:hover{
+    text-decoration: none;
 }
 #hp-modal-btn-sure{
-    background: #4398ee;
+    background: #3284a7;
     color: white;
 
 }
+#hp-modal-btn-no:hover,
 #hp-modal-btn-sure:hover{
     background: rgba(67, 152, 238, .9);
 }
 
 #hp-modal-btn-no{
-    background: #808080;
+    background: #3284a7;
     color: white;
-}
-#hp-modal-btn-no:hover{
-    background: rgba(128, 128, 128, .9);
 }
