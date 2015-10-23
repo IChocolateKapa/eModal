@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="eModal/css/modal.css"/>
     <script src="jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="eModal/css/modal.css"/>
     <script src="eModal/eModal.js"></script>
-    <!--<script src="require.js" data-main="eModal-Re/main"></script>-->
     <script>
         function test(){
             eModal.confirm("确定要点击我吗？", function(){
@@ -25,7 +24,7 @@
                     $("#test").html(),
                     function(){
                         /*在这个函数中进行左边标签的修改*/
-                        alert("这个函数中对引入的页面进行一些Dom操作")
+                        alert("这个函数中对引入的页面进行一些Dom操作");
                     },
                     function(){
                         alert("确定, 这个函数写确定事件");
@@ -41,10 +40,10 @@
 </head>
 <body>
 
-<input type="button" value="点击" onclick="test()"/>
-<input type="button" value="点击222" onclick="test1()"/>
-<input type="button" value="alert" onclick="test2()"/>
-<input type="button" value="模态框" onclick="test3()"/>
+<input type="button" value="无遮罩confirm" onclick="test()"/>
+<input type="button" value="遮罩confirm" onclick="test1()"/>
+<input type="button" value="无遮罩alert" onclick="test2()"/>
+<input type="button" value="遮罩模态框" onclick="test3()"/>
 
 <div id="test" style="display: none">
     <p>

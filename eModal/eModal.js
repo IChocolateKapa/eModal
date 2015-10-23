@@ -46,10 +46,10 @@ var eModal = {
         var winH = $(window.parent.window).height();
         var topH = winH * 0.5 - 40 + "px";
         $(".hp-modal").css({
-            width: this.cfg.width,
+            width: this.cfg.width/*,
             "margin-left": "-" + this.cfg.width/2 + "px",
             "top": topH,
-            "margin-top": "-" + eleH/2 + "px"
+            "margin-top": "-" + eleH/2 + "px"*/
         });
 
 
@@ -171,9 +171,9 @@ var eModal = {
         var topH = winH * 0.5 - 40 + "px";
         $(".hp-modal").css({
             width: this.cfg.width,
-            "margin-left": "-" + this.cfg.width/2 + "px",
-            "top": topH,
-            "margin-top": "-" + eleH/2 + "px"
+            //"margin-left": "-" + this.cfg.width/2 + "px",
+            //"top": topH,
+            //"margin-top": "-" + eleH/2 + "px"
         });
 
         var oDiv=document.getElementById('hp-title');
