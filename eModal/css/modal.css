@@ -73,6 +73,7 @@ body{
 .hp-modal>span{
     display: inline-block;
     margin-top: 20px;
+    margin-bottom: 20px;
     line-height: 26px;
     width: auto;
     min-width: 100px;
