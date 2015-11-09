@@ -93,7 +93,8 @@ var eModal = {
             $(".hp-modal-mask").click(function(eve){
                 var event = eve || window.event;
                 var target = event.target || event.srcElement;
-                if($(target).parents().hasClass("hp-modal")){
+                if($(target).parents().hasClass("hp-modal")
+                    && $(target).attr("id") != "hp-modal-btn-sure"){
                     if(event.preventDefault){
                         event.preventDefault();
                     } else{
