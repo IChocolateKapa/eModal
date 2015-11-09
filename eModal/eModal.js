@@ -7,18 +7,21 @@
 
 var eModal = {
     alert: function(msg, cfg, fn){
-
+        if($(".hp-modal").length > 0 || $(".hp-modal-mask").length > 0) return;
         this.cfg = {
             width: 300,
             title: "信息",
             skin: "0",
-            shade: true
+            shade: true,
+            sync: true
         };
 
         $.extend(this.cfg, cfg);
 
 
         var ifShade = this.cfg.shade;
+        var ifSync = this.cfg.sync;
+
 
         var title2 = "信息";
         var ss = "<div class=\"hp-modal\">"
@@ -99,18 +102,32 @@ var eModal = {
                     return false;
                 }
                 $(".hp-modal-mask").remove();
+                ifSync? fn && fn(): "";
+                /*if(ifSync){
+                    if(fn){
+                        fn();
+                    }
+                }*/
             })
         }
 
         $("#hp-modal-btn-sure").click(function(){
-            if(fn){
-                fn();
-            }
-            if(ifShade){
-                $(".hp-modal-mask").remove();
+            if (ifSync) {
+                fn && fn();
+                if(ifShade){
+                    $(".hp-modal-mask").remove();
+                } else {
+                    $(".hp-modal").remove();
+                }
             } else {
-                $(".hp-modal").remove();
+                if(ifShade){
+                    $(".hp-modal-mask").remove();
+                } else {
+                    $(".hp-modal").remove();
+                }
+                fn && fn();
             }
+
 
         })
 
@@ -133,6 +150,7 @@ var eModal = {
         })
     },
     confirm: function(msg, fn, fn2, cfg){
+        if($(".hp-modal").length > 0 || $(".hp-modal-mask").length > 0) return;
         this.cfg = {
             width: 300,
             skin: "0",
@@ -264,6 +282,7 @@ var eModal = {
     },
 
     modalDialog: function(msg, fn0, fn, fn2, cfg){
+        if($(".hp-modal").length > 0 || $(".hp-modal-mask").length > 0) return;
         this.cfg = {
             title: "信息",
             width: "auto",
