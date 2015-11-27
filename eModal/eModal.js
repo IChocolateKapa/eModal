@@ -298,17 +298,17 @@ var eModal = {
 
         //var title = "信息";
         var ss = "<div class=\"hp-modal\">"
-            + "<div class=\"hp-modal-title\">"
-            + "<i class=\"closeX\" title=\"关闭此窗口\">X</i>"
-            + "<p id='hp-title'>"+ this.cfg.title + "</p>"
-            + "</div>"
-            + "<div class=\"hp-modal-body\">"
-            + msg
-            + "</div>"
-            + "<div class='btn-group'>"
-            + "<a href='javascript:void(0)' id='hp-modal-btn-sure'>确定</a>"
-            + "<a href='javascript:void(0)' id='hp-modal-btn-no'>取消</a>"
-            + "</div>"
+                + "<div class=\"hp-modal-title\">"
+                    + "<i class=\"closeX\" title=\"关闭此窗口\">X</i>"
+                    + "<p id='hp-title'>"+ this.cfg.title + "</p>"
+                + "</div>"
+                + "<div class=\"hp-modal-body\">"
+                    + msg
+                + "</div>"
+                + "<div class='btn-group'>"
+                    + "<a href='javascript:void(0)' id='hp-modal-btn-sure'>确定</a>"
+                    + "<a href='javascript:void(0)' id='hp-modal-btn-no'>取消</a>"
+                + "</div>"
             + "</div>";
 
         var docH = $(window.parent.document).height();
@@ -343,7 +343,7 @@ var eModal = {
                 var posX = ev.pageX;
                 var posY = ev.pageY;
                 var titleH = $("#hp-title").height();
-                $(".hp-modal").css({"top": posY+titleH -60 + "px", "left": posX+"px"});
+                $(".hp-modal").css({"top": posY+titleH + 20 + "px", "left": posX+"px"});
             };
 
             document.onmouseup=function ()
