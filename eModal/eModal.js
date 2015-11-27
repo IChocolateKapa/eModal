@@ -11,6 +11,7 @@ var eModal = {
         this.cfg = {
             width: 300,
             title: "信息",
+            sureTitle: "确定",
             skin: "0",
             shade: true,
             sync: true
@@ -21,6 +22,7 @@ var eModal = {
 
         var ifShade = this.cfg.shade;
         var ifSync = this.cfg.sync;
+        var sureTitle = this.cfg.sureTitle;
 
 
         var title2 = "信息";
@@ -28,7 +30,7 @@ var eModal = {
             + "<p id='hp-title'>"+ title2 + "</p>"
             + "<span>"+ msg + "</span>"
             + "<div class='btn-group'>"
-            + "<a href='javascript:void(0)' id='hp-modal-btn-sure'>确定</a>"
+            + "<a href='javascript:void(0)' id='hp-modal-btn-sure'>" + sureTitle + "</a>"
                 //+ "<a href='javascript:void(0)' id='hp-modal-btn-no'>取消</a>"
             + "</div>"
             + "</div>";
@@ -155,21 +157,25 @@ var eModal = {
         this.cfg = {
             width: 300,
             skin: "0",
-            shade: true
+            shade: true,
+            sureTitle: "确定",
+            cancleTitle: "取消"
         };
 
         $.extend(this.cfg, cfg);
 
 
         var ifShade = this.cfg.shade;
+        var sureTitle = this.cfg.sureTitle;
+        var cancleTitle = this.cfg.cancleTitle;
 
         var title2 = "确认框";
         var ss = "<div class=\"hp-modal\">"
             + "<p id='hp-title'>"+ title2 + "</p>"
             + "<span>"+ msg + "</span>"
             + "<div class='btn-group'>"
-            + "<a href='javascript:void(0)' id='hp-modal-btn-sure'>确定</a>"
-            + "<a href='javascript:void(0)' id='hp-modal-btn-no'>取消</a>"
+            + "<a href='javascript:void(0)' id='hp-modal-btn-sure'>" + sureTitle + "</a>"
+            + "<a href='javascript:void(0)' id='hp-modal-btn-no'>" + cancleTitle + "</a>"
             + "</div>"
             + "</div>";
 
@@ -288,13 +294,17 @@ var eModal = {
             title: "信息",
             width: "auto",
             skin: "0",
-            shade: true
+            shade: true,
+            sureTitle: "确定",
+            cancleTitle: "取消"
         };
 
         $.extend(this.cfg, cfg);
 
 
         var ifShade = this.cfg.shade;
+        var sureTitle = this.cfg.sureTitle;
+        var cancleTitle = this.cfg.cancleTitle;
 
         //var title = "信息";
         var ss = "<div class=\"hp-modal\">"
@@ -306,8 +316,8 @@ var eModal = {
                     + msg
                 + "</div>"
                 + "<div class='btn-group'>"
-                    + "<a href='javascript:void(0)' id='hp-modal-btn-sure'>确定</a>"
-                    + "<a href='javascript:void(0)' id='hp-modal-btn-no'>取消</a>"
+                    + "<a href='javascript:void(0)' id='hp-modal-btn-sure'>" + sureTitle + "</a>"
+                    + "<a href='javascript:void(0)' id='hp-modal-btn-no'>" + cancleTitle + "</a>"
                 + "</div>"
             + "</div>";
 

@@ -96,7 +96,8 @@ body{
 .btn-group a{
     display: inline-block;
     line-height: 28px;
-    width: 80px;
+    min-width: 80px;
+    padding: 3px 6px;
     border: none;
     text-decoration: none;
     text-align: center;
