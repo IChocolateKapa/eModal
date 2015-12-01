@@ -10,11 +10,11 @@ body{
 }
 
 .hp-modal{
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
     -moz-box-shadow: 1px 1px 20px #175591;
     -webkit-box-shadow: 1px 1px 20px #175591;
     -ms-box-shadow: 1px 1px 20px #175591;
