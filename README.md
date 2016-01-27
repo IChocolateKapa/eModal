@@ -21,3 +21,10 @@
     eModal.alert("3333333",{shade: false});
     
     
+# To Echo
+>> npm install fis3 -g
+
+>> npm install fis3-postpackager-loader -g
+
+>> 在根目录下，运行start.sh即可压缩文件     
+    
