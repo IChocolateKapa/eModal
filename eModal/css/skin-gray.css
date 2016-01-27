@@ -1,0 +1,39 @@
+
+/*skin-gray*/
+.hp-modal-mask.skin-gray{
+    background: rgba(136, 136, 136, 0.3);
+}
+.hp-modal.skin-gray{
+    -moz-box-shadow: 1px 1px 20px #86888B;
+    -webkit-box-shadow: 1px 1px 20px #86888B;
+    -ms-box-shadow: 1px 1px 20px #86888B;
+    -o-box-shadow: 1px 1px 20px #86888B;
+    box-shadow: 1px 1px 20px #86888B;
+}
+
+.hp-modal.skin-gray #hp-title{
+    background: #86888B;
+    color: #ffffff;
+}
+
+.hp-modal.skin-gray .closeX{
+    color: #fff;
+}
+
+.hp-modal.skin-gray>span{
+    color: #222;
+}
+
+.hp-modal.skin-gray #hp-modal-btn-sure{
+    background: #86888B;
+    color: white;
+}
+.hp-modal.skin-gray #hp-modal-btn-no{
+    background: #86888B;
+    color: white;
+}
+.hp-modal.skin-gray #hp-modal-btn-no:hover,
+.hp-modal.skin-gray #hp-modal-btn-sure:hover{
+    background: rgba(136, 136, 136, .9);
+}
+/*skin-gray*/
