@@ -19,6 +19,13 @@
             eModal.alert("3333333",{shade: false});
         }
 
+        function test4 () {
+            eModal.alert("wqedwdfef", {
+                shade: true,
+                draggable: true,
+                clickShadeHide: false
+            });
+        }
         function test3(){
             eModal.modalDialog(
                     $("#test").html(),
@@ -47,6 +54,7 @@
 <input type="button" value="无遮罩confirm" onclick="test()"/>
 <input type="button" value="遮罩confirm" onclick="test1()"/>
 <input type="button" value="无遮罩alert" onclick="test2()"/>
+<input type="button" value="遮罩alert" onclick="test4()"/>
 <input type="button" value="遮罩模态框" onclick="test3()"/>
 
 <div id="test" style="display: none">
