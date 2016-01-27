@@ -5,7 +5,7 @@
 require.config({
     //baseUrl: "",
     paths: {
-        jquery: '../jquery-2.1.3.min',
+        jquery: '../example/jquery-2.1.3.min.js',
         window: 'window'
         /*千万注意不能后面加.js后缀*/
     }
