@@ -247,28 +247,37 @@ var eModal = {
     },
 
     modalDialog: function (msg, fn0, fn, fn2, cfg) {
-        if($(".hp-modal").length > 0 || $(".hp-modal-mask").length > 0) return;
+
+        if ($(".hp-modal").length > 0 || $(".hp-modal-mask").length > 0) return;
+
         this.cfg = {
-            title: "信息",
-            width: "auto",
-            skin: "0",
-            shade: true,
+            width: 300,
+            title: "确认",
             sureTitle: "确定",
-            cancleTitle: "取消"
+            cancleTitle: "取消",
+            draggable: false,
+            skin: "skin-blue",
+            shade: true,
+            clickShadeHide: true,
+            sync: true
         };
 
         $.extend(this.cfg, cfg);
 
 
-        var ifShade = this.cfg.shade;
-        var sureTitle = this.cfg.sureTitle;
-        var cancleTitle = this.cfg.cancleTitle;
+        var ifShade = this.cfg.shade,
+            ifSync = this.cfg.sync,
+            sureTitle = this.cfg.sureTitle,
+            cancleTitle = this.cfg.cancleTitle,
+            isDraggable = this.cfg.draggable,
+            isClickShade = this.cfg.clickShadeHide,
+            skin = this.cfg.skin,
+            title2 = this.cfg.title;
 
-        //var title = "信息";
-        var ss = "<div class=\"hp-modal\">"
+        var ss = "<div class=\"hp-modal " + skin + "\">"
                 + "<div class=\"hp-modal-title\">"
                     + "<i class=\"closeX\" title=\"关闭此窗口\">X</i>"
-                    + "<p id='hp-title'>"+ this.cfg.title + "</p>"
+                    + "<p id='hp-title'>"+ title2 + "</p>"
                 + "</div>"
                 + "<div class=\"hp-modal-body\">"
                     + msg
@@ -280,107 +289,81 @@ var eModal = {
             + "</div>";
 
         var docH = $(window.parent.document).height();
-        if(ifShade){
-            var shade = "<div class='hp-modal-mask'></div>";
-            $("body").prepend(shade);
-            $(ss).appendTo($(".hp-modal-mask"));
-            $(".hp-modal-mask").css({"height": docH});
+        if (ifShade) {
+            var shade = '<div class="hp-modal-mask ' + skin + '"></div>';
+            $('body').prepend($(shade));
+            $('.hp-modal-mask').append($(ss)).css({'height': docH});
         } else {
-            $(ss).prependTo($("body"));
+            $(ss).prependTo($('body'));
         }
 
 
-        var eleH = $(".hp-modal").height();
-
-        var winH = $(window.parent.window).height();
-        //var topH = winH * 0.5 - 40 + "px";
-        $(".hp-modal").css({
-            width: this.cfg.width,
-            //"margin-left": "-" + this.cfg.width/2 + "px",
-            //"top": topH,
-            //"margin-top": "-" + eleH/2 + "px"
+        $('.hp-modal').css({
+            width: this.cfg.width
         });
 
-        var oDiv=document.getElementById('hp-title');
-
-        oDiv.onmousedown=function (ev)
-        {
-            document.onmousemove=function (ev)
-            {
-                /*获取鼠标相对于浏览器的偏移*/
-                var posX = ev.pageX;
-                var posY = ev.pageY;
-                var titleH = $("#hp-title").height();
-                $(".hp-modal").css({"top": posY+titleH + 20 + "px", "left": posX+"px"});
-            };
-
-            document.onmouseup=function ()
-            {
-                document.onmousemove=null;
-                document.onmouseup=null;
-
-                if(oDiv.releaseCapture)
-                {
-                    oDiv.releaseCapture();	//IE
-                }
-            };
-
-            if(oDiv.setCapture)
-            {
-                oDiv.setCapture();	//IE
-            }
-
-            return false;
-        };
-
-
-        if(ifShade){
-            $(".hp-modal-mask").click(function(eve){
-                var event = eve || window.event;
-                var target = event.target || event.srcElement;
-                if($(target).parents().hasClass("hp-modal")){
-                    if(event.preventDefault){
-                        event.preventDefault();
-                    } else{
-                        event.returnValue = false;
-                    }
-                    return false;
-                }
-                $(".hp-modal-mask").remove();
-            })
+        if (isDraggable) {
+            $('#hp-title').css({'cursor': 'move'});
+            var oDiv = document.getElementById('hp-title');
+            this.dragEvent(oDiv);
         }
 
-        $("#hp-modal-btn-sure").click(function(){
-            if(fn){
-                fn();
+        if (ifShade) {
+            if (isClickShade) {
+                $('.hp-modal-mask').click(function (eve) {
+                    var event = eve || window.event;
+                    var target = event.target || event.srcElement;
+                    if ($(target).parents().hasClass('hp-modal')
+                        && $(target).attr('id') != 'hp-modal-btn-sure') {
+                        if (event.preventDefault) {
+                            event.preventDefault();
+                        } else {
+                            event.returnValue = false;
+                        }
+                        return false;
+                    }
+                    $('.hp-modal-mask').remove();
+                    ifSync? fn && fn(): "";
+                })
             }
-            if(ifShade){
-                $(".hp-modal-mask").remove();
+        }
+
+        $('#hp-modal-btn-sure').click(function () {
+            if (ifSync) {
+                fn && fn();
+                if (ifShade) {
+                    $(".hp-modal-mask").remove();
+                } else {
+                    $('.hp-modal').remove();
+                }
             } else {
-                $(".hp-modal").remove();
+                if (ifShade) {
+                    $('.hp-modal-mask').remove();
+                } else {
+                    $('.hp-modal').remove();
+                }
+                fn && fn();
             }
+        });
 
-        })
-
-        $("#hp-modal-btn-no").click(function(){
-            if(fn2){
+        $('#hp-modal-btn-no').click(function () {
+            if (fn2) {
                 fn2();
             }
-
-            if(ifShade){
-                $(".hp-modal-mask").remove();
+            if (ifShade) {
+                $('.hp-modal-mask').remove();
             } else {
-                $(".hp-modal").remove();
+                $('.hp-modal').remove();
             }
-        })
+        });
 
 
 
-        $(".closeX").click(function(){
-            if(ifShade){
-                $(".hp-modal-mask").remove();
+        $(".closeX").click(function () {
+            if (ifShade) {
+                $('.hp-modal-mask').remove();
             } else {
-                $(".hp-modal").remove();
+                $('.hp-modal').remove();
             }
         });
 
