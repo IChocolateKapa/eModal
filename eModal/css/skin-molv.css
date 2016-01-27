@@ -1,0 +1,39 @@
+
+/*skin-molv*/
+.hp-modal-mask.skin-molv{
+    background: rgba(75, 184, 99, 0.3);
+}
+.hp-modal.skin-molv{
+    -moz-box-shadow: 1px 1px 20px #4bb877;
+    -webkit-box-shadow: 1px 1px 20px #4bb877;
+    -ms-box-shadow: 1px 1px 20px #4bb877;
+    -o-box-shadow: 1px 1px 20px #4bb877;
+    box-shadow: 1px 1px 20px #4bb877;
+}
+
+.hp-modal.skin-molv #hp-title{
+    background: #4bb877;
+    color: #ffffff;
+}
+
+.hp-modal.skin-molv .closeX{
+    color: #fff;
+}
+
+.hp-modal.skin-molv>span{
+    color: #222;
+}
+
+.hp-modal.skin-molv #hp-modal-btn-sure{
+    background: #4bb877;
+    color: white;
+}
+.hp-modal.skin-molv #hp-modal-btn-no{
+    background: #4bb877;
+    color: white;
+}
+.hp-modal.skin-molv #hp-modal-btn-no:hover,
+.hp-modal.skin-molv #hp-modal-btn-sure:hover{
+    background: rgba(77, 186, 99, .9);
+}
+/*skin-molv*/

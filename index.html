@@ -5,6 +5,7 @@
     <title></title>
     <script src="jquery-2.1.3.min.js"></script>
     <link rel="stylesheet" href="eModal/css/modal.css"/>
+    <link rel="stylesheet" href="eModal/css/skin-molv.css"/>
     <script src="eModal/eModal.js"></script>
     <script>
         function test(){
@@ -16,12 +17,13 @@
             }, function(){}, {shade: true, sureTitle: "快来点我呀", cancleTitle: "布点我就走漏"});
         }
         function test2(){
-            eModal.alert("3333333",{shade: false});
+            eModal.alert("3333333",{shade: false,skin: 'skin-molv'});
         }
 
         function test4 () {
             eModal.alert("wqedwdfef", {
                 shade: true,
+                skin: 'skin-molv',
                 draggable: true,
                 clickShadeHide: false
             });
