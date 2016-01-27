@@ -5,7 +5,6 @@ body{
 .hp-modal-mask{
     position: absolute;
     width: 100%;
-    background: rgba(53, 118, 173, 0.5);
     z-index: 1000;
 }
 
@@ -15,16 +14,10 @@ body{
     -moz-border-radius: 8px;
     -ms-border-radius: 8px;
     -o-border-radius: 8px;
-    -moz-box-shadow: 1px 1px 20px #175591;
-    -webkit-box-shadow: 1px 1px 20px #175591;
-    -ms-box-shadow: 1px 1px 20px #175591;
-    -o-box-shadow: 1px 1px 20px #175591;
-    box-shadow: 1px 1px 20px #175591;
     position: fixed;
     background: #f8f8f8;
     text-align: center;
     min-width: 300px;
-    /*max-width: 900px;*/
     width: auto;
     height: auto;
     top: 50%;
@@ -33,6 +26,7 @@ body{
     min-height: 120px;
     font-family: 'Microsoft Yahei';
 }
+
 .hp-modal #hp-title{
     position: relative;
     width: calc(100% - 40px);
@@ -40,12 +34,11 @@ body{
     line-height: 40px;
     min-height: 40px;
     height: auto;
-    background: #3284a7;
+    /*background: #3284a7;*/
     box-sizing: inherit;
     padding: 0;
     margin: 0;
-    cursor: move;
-    color: #ffffff;
+    /*color: #ffffff;*/
     text-align: left;
     text-indent: 10px;
     padding-right:40px;
@@ -56,7 +49,6 @@ body{
 .hp-modal .hp-modal-body{
     text-align: left;
     padding: 20px;
-    /*min-height: 60px;*/
 }
 
 .hp-modal .closeX{
@@ -72,6 +64,7 @@ body{
     z-index: 2000;
     cursor: pointer;
 }
+
 .hp-modal>span{
     display: inline-block;
     margin-top: 20px;
@@ -83,15 +76,14 @@ body{
     white-space: pre-line;
     word-break: break-all;
     word-wrap: break-word;
-    color: #000;
+    color: #222;
 }
 .hp-modal>span:nth-of-type(1){
     max-width: 240px;
 }
 .btn-group{
     position: relative;
-    margin-top: 10px;
-    bottom: 10px;
+    margin: 10px auto;
     width: 90%;
     text-align: right;
 }
@@ -114,17 +106,54 @@ body{
 .btn-group a:hover{
     text-decoration: none;
 }
-#hp-modal-btn-sure{
+.hp-modal #hp-modal-btn-no,
+.hp-modal #hp-modal-btn-sure{
     background: #3284a7;
     color: white;
-
 }
-#hp-modal-btn-no:hover,
-#hp-modal-btn-sure:hover{
+
+.hp-modal #hp-modal-btn-no:hover,
+.hp-modal #hp-modal-btn-sure:hover{
     background: rgba(67, 152, 238, .9);
 }
 
-#hp-modal-btn-no{
+
+
+/*Here comes our beautiful skins...*/
+
+.hp-modal-mask.skin-blue{
+    background: rgba(53, 118, 173, 0.5);
+}
+.hp-modal.skin-blue{
+    -moz-box-shadow: 1px 1px 20px #175591;
+    -webkit-box-shadow: 1px 1px 20px #175591;
+    -ms-box-shadow: 1px 1px 20px #175591;
+    -o-box-shadow: 1px 1px 20px #175591;
+    box-shadow: 1px 1px 20px #175591;
+}
+
+.hp-modal.skin-blue #hp-title{
+    background: #3284a7;
+    color: #ffffff;
+}
+
+.hp-modal.skin-blue .closeX{
+    color: #fff;
+}
+
+.hp-modal.skin-blue>span{
+    color: #222;
+}
+
+.hp-modal.skin-blue #hp-modal-btn-sure{
     background: #3284a7;
     color: white;
+}
+.hp-modal.skin-blue #hp-modal-btn-no{
+    background: #3284a7;
+    color: white;
+}
+.hp-modal.skin-blue #hp-modal-btn-no:hover,
+.hp-modal.skin-blue #hp-modal-btn-sure:hover{
+    background: rgba(67, 152, 238, .9);
 }
