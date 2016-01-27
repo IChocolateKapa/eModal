@@ -11,13 +11,13 @@
     <script>
         function test(){
             eModal.confirm("确定要点击我吗？", function(){
-            }, function(){}, {shade: false});
+            }, function(){}, {shade: false, draggable: true});
         }
         function test1(){
             eModal.confirm("确定要点击我吗？", function(){
-            }, function(){}, {shade: true, sureTitle: "快来点我呀", cancleTitle: "布点我就走漏"});
+            }, function(){}, {shade: true, sureTitle: "快来点我呀", cancleTitle: "布点我就走漏", skin: 'skin-gray'});
         }
-        function test2(){
+        function test2 () {
             eModal.alert("3333333",{shade: false,skin: 'skin-molv'});
         }
 
@@ -29,7 +29,7 @@
                 clickShadeHide: false
             });
         }
-        function test3(){
+        function test3 () {
             eModal.modalDialog(
                     $("#test").html(),
                     function(){
