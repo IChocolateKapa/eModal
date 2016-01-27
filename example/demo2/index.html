@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../eModal/css/modal.css"/>
+    <script src="../require.js" data-main="main"></script>
+    <script>
+        require.config({
+            paths: {
+                jquery: '../jquery-2.1.3.min',
+                eModal: '../../eModal-Re/eModal'
+            }
+        });
+    </script>
+</head>
+<body>
+
+<input type="button" value="无遮罩confirm" onclick="test()"/>
+<input type="button" value="遮罩confirm" onclick="test1()"/>
+<input type="button" value="无遮罩alert" onclick="test2()"/>
+<input type="button" value="遮罩alert" onclick="test4()"/>
+<input type="button" value="遮罩模态框" onclick="test3()"/>
+
+<div id="test" style="display: none">
+    <p>
+        你好似比我跑得快似得
+    </p>
+</div>
+
+</body>
+</html>
