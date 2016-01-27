@@ -1,0 +1,33 @@
+
+/*skin-blue*/
+.hp-modal-mask.skin-blue{background: rgba(53, 118, 173, 0.5);}
+.hp-modal.skin-blue{
+    -moz-box-shadow: 1px 1px 20px #175591;
+    -webkit-box-shadow: 1px 1px 20px #175591;
+    -ms-box-shadow: 1px 1px 20px #175591;
+    -o-box-shadow: 1px 1px 20px #175591;
+    box-shadow: 1px 1px 20px #175591;
+}
+
+.hp-modal.skin-blue #hp-title{
+    background: #3284a7;
+    color: #ffffff;
+}
+
+.hp-modal.skin-blue .closeX{color: #fff;}
+
+.hp-modal.skin-blue>span{color: #222;}
+
+.hp-modal.skin-blue #hp-modal-btn-sure{
+    background: #3284a7;
+    color: white;
+}
+.hp-modal.skin-blue #hp-modal-btn-no{
+    background: #3284a7;
+    color: white;
+}
+.hp-modal.skin-blue #hp-modal-btn-no:hover,
+.hp-modal.skin-blue #hp-modal-btn-sure:hover{
+    background: rgba(67, 152, 238, .9);
+}
+/*skin-blue*/
