@@ -1,0 +1,16 @@
+{
+  "name": "emodal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "eModal.js",
+  "dependencies": {
+    "webpack": "^1.13.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack"
+  },
+  "author": "",
+  "license": "ISC"
+}
